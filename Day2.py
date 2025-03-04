@@ -18,4 +18,23 @@ class Solution:
                     return i
             return 1
         return str1[:gcd(len(str1),len(str2))]
+'''
+There are n kids with candies. You are given an integer array candies, where each candies[i] represents the number of candies the ith kid has, and an integer extraCandies, denoting the number of extra candies that you have.
+
+Return a boolean array result of length n, where result[i] is true if, after giving the ith kid all the extraCandies, they will have the greatest number of candies among all the kids, or false otherwise.
+
+Note that multiple kids can have the greatest number of candies.
+'''
+
+class Solution:
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        list_len = len(candies)
+        max_kid = max(candies)
+        result = []
+        for i in range(list_len):
+            if (candies[i]+extraCandies >= max_kid):
+                result.append(True)
+            else:
+                result.append(False)
+        return result
                 
